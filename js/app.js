@@ -50,3 +50,21 @@ document.getElementById('calculator').addEventListener('click', function(event){
         displayShowField.value = displayShowField.value + previousButtonText ;
     }
 })
+
+
+document.getElementById('submit').addEventListener('click', function(){
+
+    const generatedPin = document.getElementById('pin-display').value;
+    const userInput = document.getElementById('display').value;
+
+    const successMessage = document.getElementById('pin-success');
+    const failurMessage = document.getElementById('pin-failur');
+
+    if (generatedPin === userInput) {
+        successMessage.style.display = 'block';
+        failurMessage.style.display = 'none';
+    } else {
+        failurMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+    }
+})
