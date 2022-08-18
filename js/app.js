@@ -27,4 +27,26 @@ document.getElementById('generate-pin').addEventListener('click', function(){
     const inputDisplayField = document.getElementById('pin-display');
     inputDisplayField.value = pin;
 
+});
+
+document.getElementById('calculator').addEventListener('click', function(event){
+    
+    const previousButtonText = event.target.innerText;
+    
+    const displayShowField= document.getElementById('display');
+
+    if (isNaN(previousButtonText) ){
+
+        if (previousButtonText === 'C') {
+            displayShowField.value = '';
+        } else if (previousButtonText === '<'){
+            const displayValueArray = displayShowField.value.split('');
+            displayValueArray.pop();
+            displayShowField.value = displayValueArray.join('');
+        }
+        
+    } else {
+        
+        displayShowField.value = displayShowField.value + previousButtonText ;
+    }
 })
